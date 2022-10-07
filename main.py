@@ -31,7 +31,7 @@ if __name__ == '__main__':
     amplitude = 1
     shift = 0
     frequencies = [1, 2, 4, 8]
-    t = np.linspace(0.0, 1.0, 1000)
+    t = np.linspace(5.0, 6.5, 1000)
     freq_x = np.fft.rfftfreq(len(t), d=1 / 1000)
 
     for frequency in frequencies:
@@ -47,7 +47,7 @@ if __name__ == '__main__':
         axes[row, 0].plot(t, harmonic, 'b')
         axes[row, 0].grid(True)
 
-        axes[row, 1].set_xlim([-1 * frequency, 10 * frequency])
+        axes[row, 1].set_xlim([1, 10 * frequency])
         axes[row, 1].plot(freq_x, np.abs(harmonic_spectre), 'r')
         axes[row, 1].grid(True)
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         axes[row, 2].plot(t, digital, 'b')
         axes[row, 2].grid(True)
 
-        axes[row, 3].set_xlim([-1 * frequency, 10 * frequency])
+        axes[row, 3].set_xlim([1, 10 * frequency])
         axes[row, 3].plot(freq_x, np.abs(digital_spectre), 'r')
         axes[row, 3].grid(True)
 
